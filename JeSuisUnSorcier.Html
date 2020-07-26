@@ -1,13 +1,22 @@
 <!-- Fiche personnage crée par Maldragan -->
 <!--           en Juin 2020              -->
+<!--  modification juillet : ajout Pages -->
 
-<div class="charsheet sheet-container">
+<div class="charsheet ">
+    <div>
+        <button type="action" name="act_character" >Personnage</button>
+        <button type="action" name="act_pages" >Baguettes / Amis / Livres</button>
+        
+    </div>
+    <input type='hidden' class='sheet-tabstoggle' name='attr_sheetTab'  value='character'  />
     
+<div class="character sheet-container">    
     <div class="" >
       <div class="styled-input-single styled-input--diamond" style="top:208px!important; left:-8px!important;" >
             <input type="checkbox" name="attr_astronomie" id="checkbox1-example-five" />
             <label for="checkbox1-example-five"></label>
       </div>
+      
       <div class="styled-input-single styled-input--diamond" style="top:228px!important;left:0px!important;" >
             <input type="checkbox" name="attr_Botanique" id="checkbox2-example-five" />
             <label for="checkbox2-example-five"></label>
@@ -141,13 +150,13 @@
         <input type="text" name="attr_Annee" style="top:66px!important; left:558px!important;width:36px; font-size:25px; text-align:center;font-weight: bold;">
         <input type="text" name="attr_NomJoueur" style="top:107px!important; left:154px!important;width:140px; font-size:14px; ">
         <input type="text" name="attr_Table" style="top:127px!important; left:154px!important;width:140px; font-size:14px; ">
-       <!-- <input type="text" name="attr_Epoque" style="top:146px!important; left:154px!important;width:140px; font-size:14px; ">-->
+       
        <div class="EpoqueSelect">
         <select name="attr_Epoque" style="top:146px!important; left:154px!important;width:140px; font-size:14px; ">
                 <option>Passé lointain</option><option>Passé proche</option><option>Contemporain</option><option>Futur Proche</option><option>Futur Lointain</option><option>Réalité alternative</option>
             </select>
         </div>
-        <input type="text" name="attr_Ambition" style="top:146px!important; left:335px!important;width:160px; font-size:14px; ">
+         <input type="text" name="attr_Ambition" style="top:146px!important; left:335px!important;width:160px; font-size:14px; ">
         
         <input type="text" name="attr_Esprit" value="0" style="top:244px!important; left:425px!important;width:42px; font-size:35px; text-align:center;font-weight: bold;">
         <input type="text" name="attr_Coeur" value="0" style="top:464px!important; left:304px!important;width:42px; font-size:35px; text-align:center;font-weight: bold;">
@@ -468,5 +477,158 @@
         </div>
         
     </div>
-    
+    </div>
+    <div class='pages'>
+        <div class="flex-row">
+            <div class="cons section flex-col">
+                <label style="backgroupd-color:grey;">Conséquences</label>
+                <div class="detail-cons detail-ligne" style="background-color:grey!important;">
+                        <div class="cons-nom" style="font-weight: bold;">
+                            Nom
+                        </div>
+                        <div class="cons-desc" style="font-weight: bold;">
+                            Description
+                        </div>
+                        <div class="cons-gravite" style="font-weight: bold;">
+                            Gravité
+                        </div>
+                        
+                </div>
+                <fieldset class="repeating_cons">
+                    <div class="detail-cons">
+                        <div class="cons-nom">
+                            <input name="attr_cNom" type="text"  />
+                        </div>
+                        <div class="cons-desc">
+                            <input name="attr_cDesc" type="text"  />
+                        </div>
+                       
+                        <div class="cons-gravite">
+                            <select name="attr_cGravite" class="dtype"> 
+                                <option value="Mineur" selected="selected">Mineur</option>
+                                <option value="Majeur">Majeur</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="flex-row">
+            <div class="amis section flex-col">
+                <label style="backgroupd-color:grey;">Amis</label>
+                <div class="detail-amis detail-ligne" style="background-color:grey!important;">
+                        <div class="amis-nom" style="font-weight: bold;">
+                            Nom
+                        </div>
+                        <div class="amis-Trait1" style="font-weight: bold;">
+                            Trait 1
+                        </div>
+                        <div class="amis-Trait2" style="font-weight: bold;">
+                            Trait 2
+                        </div>
+                        <div class="amis-Trait3" style="font-weight: bold;">
+                            Trait 3
+                        </div>
+                         <div class="amis-Maison" style="font-weight: bold;">
+                             Maison
+                        </div>
+                </div>
+                <fieldset class="repeating_amis">
+                    <div class="detail-amis">
+                        <div class="amis-nom">
+                            <input name="attr_anom" type="text"  />
+                        </div>
+                        <div class="amis-Trait1">
+                            <input name="attr_aTrait1" type="text"  />
+                        </div>
+                        <div class="amis-Trait2">
+                            <input name="attr_aTrait2" type="text"  />
+                        </div>
+                        <div class="amis-Trait3">
+                            <input name="attr_aTrait3" type="text"  />
+                        </div>
+                        <div class="amis-Maison">
+                            <select name="attr_aMaison" class="dtype"> 
+                                <option value="Griffondor" selected="selected">Griffondor</option>
+                                <option value="Poufsouffle">Poufsouffle</option>
+                                <option value="Serdaigle">Serdaigle</option>
+                                <option value="Serpentard">Serpentard</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="flex-row">
+            <div class="livres section flex-col">
+                <label style="backgroupd-color:grey;">Bibliothèque</label>
+                <div class="detail-livres detail-ligne" style="background-color:grey!important;">
+                        <div class="livres-nom" style="font-weight: bold;">
+                            Nom livre
+                        </div>
+                        <div class="livres-Desc" style="font-weight: bold;">
+                            Description
+                        </div>
+                       
+                </div>
+                <fieldset class="repeating_livres">
+                    <div class="detail-livres">
+                        <div class="livres-nom">
+                            <input name="attr_lnom" type="text"  />
+                        </div>
+                        <div class="livres-Desc">
+                            <input name="attr_ldesc" type="text"  />
+                        </div>
+                        
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="flex-row">
+            <div class="baguettes section flex-col">
+                <label style="backgroupd-color:grey;">Baguettes</label>
+                <div class="detail-baguettes detail-ligne" style="background-color:grey!important;">
+                        <div class="baguettes-bois" style="font-weight: bold;">
+                            Bois
+                        </div>
+                        <div class="baguettes-coeur" style="font-weight: bold;">
+                            Coeur
+                        </div>
+                        <div class="baguettes-taille" style="font-weight: bold;">
+                            Taille
+                        </div>
+                         <div class="baguettes-createur" style="font-weight: bold;">
+                             Créateur
+                        </div>
+                </div>
+                <fieldset class="repeating_baguettes">
+                    <div class="detail-baguettes">
+                        <div class="baguettes-bois">
+                            <input name="attr_bbois" type="text"  />
+                        </div>
+                        <div class="baguettes-coeur">
+                            <input name="attr_bcoeur" type="text"  />
+                        </div>
+                        <div class="baguettes-taille">
+                            <input name="attr_btaille" type="text"  />
+                        </div>
+                        <div class="baguettes-createur">
+                            <input name="attr_bcreateur" type="text"  />
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+   
 </div>
+ <script type="text/worker">
+    const buttonlist = ["character","pages"];
+    buttonlist.forEach(button => {
+        on(`clicked:${button}`, function() {
+            setAttrs({
+                sheetTab: button
+            });
+        });
+    });
+</script>

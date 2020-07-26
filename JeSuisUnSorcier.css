@@ -1,12 +1,20 @@
-/* Fiche personnage crÃ©e par Maldragan  */
+/* Fiche personnage crée par Maldragan  */
 /*             en Juin 2020             */
+/* modification juillet : ajout Pages   */
 
 *, ::before, ::after {
     box-sizing: border-box;
 }
 
+.sheet-copy{
+    font-style: italic; 
+    font-size: 10px;
+    color:#808080;
+    margin-left:15px;
+}
 
-input[type="text"]{
+
+.sheet-character input[type="text"]{
     position: absolute!important;
     border:0px solid;
     background-color=transparent!important;
@@ -16,7 +24,7 @@ input[type="text"]{
    /*margin-top:63px;*/
 }
 
-select{
+.sheet-character select{
     position: absolute!important;
     background-color=transparent;
     cursor: pointer;
@@ -26,7 +34,7 @@ select{
     /*margin-top:63px;*/
 }
 
-textarea,input[type="textarea"]{
+.sheet-character textarea,input[type="textarea"]{
     position: absolute!important;
     border:0px solid;
     background-color=transparent!important;
@@ -37,6 +45,18 @@ textarea,input[type="textarea"]{
     resize: none;
     vertical-align:top;
     
+}
+
+/*Configure the tab buttons*/
+.sheet-character,
+.sheet-pages {
+	display: none;
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value="character"] ~ div.sheet-character,
+.sheet-tabstoggle[value="pages"] ~ div.sheet-pages {
+	display: block;
 }
 
 .sheet-selectCours select{
@@ -447,5 +467,137 @@ textarea,input[type="textarea"]{
     background:#7ac78d;
   }
   
+/* ------- Pages ------- */
+
+.sheet-section {
+    padding: 5px;
+    border-style: solid;
+    margin: 5px;
+    background-color:transparent;
+    border-radius: 5px;
+    min-height:200px;
+}
+
+.sheet-section .sheet-label{
+    font-weight: bold;
+}
+
+.sheet-flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-grow:1;
+}
+
+.sheet-flex-col {
+  display: flex;
+  flex-direction: column;
+  flex-grow:1;
+}
+
+.sheet-pages input{
+    width:100%;
+}
+
+.sheet-pages select{
+    width:100%;
+}
+
+.sheet-pages textarea{
+    width:100%;
+}
+
+.sheet-detail-ligne{
+     border-top:1px solid black;
+}
+
+.sheet-detail-cons{
+    display:grid;
+    grid-template-columns: 2fr 5fr 1fr ;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "cons-nom cons-desc cons-gravite";
+    margin-top:2px;
+}
 
 
+.sheet-cons-nom{
+    grid-area:cons-nom;
+}
+
+.sheet-cons-desc{
+    grid-area:cons-desc;
+}
+
+.sheet-cons-gravite{
+    grid-area:cons-gravite;
+}
+
+
+.sheet-detail-baguettes{
+    display:grid;
+    grid-template-columns: 3fr 2fr 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "baguettes-bois baguettes-coeur baguettes-taille baguettes-createur";
+    margin-top:2px;
+}
+
+
+.sheet-baguettes-bois{
+    grid-area:baguettes-bois;
+}
+
+.sheet-baguettes-coeur{
+    grid-area:baguettes-coeur;
+}
+
+.sheet-baguettes-taille{
+    grid-area:baguettes-taille;
+}
+.sheet-baguettes-createur{
+    grid-area:baguettes-createur;
+}
+
+.sheet-detail-amis{
+    display:grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "amis-nom amis-Trait1 amis-Trait2 amis-Trait3 amis-Maison";
+}
+
+
+.sheet-amis-nom{
+    grid-area:amis-nom;
+}
+
+.sheet-amis-Trait1{
+    grid-area:amis-Trait1;
+}
+
+.sheet-amis-Trait2{
+    grid-area:amis-Trait2;
+}
+.sheet-amis-Trait3{
+    grid-area:amis-Trait3;
+}
+.sheet-amis-Maison{
+    grid-area:amis-Maison;
+}
+
+.sheet-detail-livres{
+    display:grid;
+    grid-template-columns: 2fr 6fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "livres-nom livres-Desc";
+}
+
+
+.sheet-livres-nom{
+    grid-area:livres-nom;
+}
+
+.sheet-livres-Desc{
+    grid-area:livres-Desc;
+}
